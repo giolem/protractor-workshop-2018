@@ -4,7 +4,6 @@
   "description": "This is a Workshop about Protractor",
   "main": "index.js",
   "scripts": {
-
     "clean": "rm -rf dist",
     "build": "npm run lint && npm run clean && tsc",
     "test:local": "npm run build && protractor dist/protractor/local.config.js",
@@ -12,7 +11,6 @@
     "test": "npm run test:headless",
     "postinstall": "webdriver-manager update --gecko false",
     "lint": "tslint --project tsconfig.json protractor/**/*.ts test/**/*.ts src/**/*.ts"
-
   },
   "repository": {
     "type": "git",
@@ -31,17 +29,15 @@
   },
   "homepage": "https://github.com/giolem/protractor-workshop-2018#readme",
   "dependencies": {
-
-
     "jasmine-spec-reporter": "^4.2.1",
     "protractor": "^5.4.2",
     "tslint": "^5.20.0",
     "tslint-config-airbnb": "^5.11.2"
-
   },
   "devDependencies": {
     "@types/jasminewd2": "^2.0.8",
     "@types/node": "^12.11.7",
+    "jasmine-awesome-report": "0.0.3",
     "typescript": "^3.6.4"
   }
 }
