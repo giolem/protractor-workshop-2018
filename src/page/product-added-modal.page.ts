@@ -4,7 +4,7 @@ export class ProductAddedModalPage {
   private submitModalButtom: ElementFinder;
 
   constructor () {
-    this.submitModalButtom = $('[style*="display: block;"] .button-container > a');
+    this.submitModalButtom = $('[style*="display: block;"] .button-container a.btn');
   }
 
   public async goToProductAddedModalPage(): Promise<void> {

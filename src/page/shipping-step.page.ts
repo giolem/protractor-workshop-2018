@@ -7,8 +7,8 @@ export class ShippingStepPage {
   constructor () {
 
     this.checkSelector = $('#cgv');
-    this.clickSubmitButtom = $('#form > p > button > span');
-
+    // this.clickSubmitButtom = $('#form > p > button > span');
+    this.clickSubmitButtom = $('button[name=processCarrier]  span');
   }
 
   public async goToShippingStepPage(): Promise<void> {
