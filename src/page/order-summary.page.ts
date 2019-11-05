@@ -1,4 +1,4 @@
-import { $, ElementFinder } from 'protractor';
+import { $, ElementFinder, browser, protractor } from 'protractor';
 
 export class OrderSummaryPage {
   private submitAddButtom: ElementFinder;
@@ -8,6 +8,7 @@ export class OrderSummaryPage {
   }
 
   public async goToOrderSummaryPage(): Promise<void> {
+    await browser.wait(protractor.ExpectedConditions.visibilityOf(this.submitAddButtom), 3000, 'Element still not visible');
     await this.submitAddButtom.click();
   }
 }

@@ -9,7 +9,7 @@ export const config: Config = {
   SELENIUM_PROMISE_MANAGER : false,
   onPrepare: () => {
     browser.ignoreSynchronization = true;
-    browser.manage().timeouts().implicitlyWait(3000);
+    browser.manage().timeouts().implicitlyWait(0);
     reporter();
   },
   jasmineNodeOpts: {
