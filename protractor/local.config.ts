@@ -1,6 +1,7 @@
 
 import { Config, browser } from 'protractor';
-import { reporter } from './helpers/reporter';
+import { awesomeReporter } from './helpers/awesome-report';
+
 export const config: Config = {
   framework: 'jasmine',
   specs: ['../test/**/*.spec.js'],
@@ -10,10 +11,16 @@ export const config: Config = {
   onPrepare: () => {
     browser.ignoreSynchronization = true;
     browser.manage().timeouts().implicitlyWait(0);
-    reporter();
+    awesomeReporter();
   },
   jasmineNodeOpts: {
-    defaultTimeoutInterval: 120000
+    defaultTimeoutInterval: 120000 ,
+    capabilities: {
+      browserName: 'chrome',
+      chromeOptions: {
+        args: ['--disable-popup-blocking', '--no-default-browser-check', '--window-size=800,600'],
+        prefs: { credentials_enable_service: false }
+      }
+    }
   }
-
 };

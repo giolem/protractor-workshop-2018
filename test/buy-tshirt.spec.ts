@@ -40,10 +40,10 @@ describe('Open shopping page', () => {
             await shippingStepPage.goToShippingStepPage();
             await bankPaymentPage.goToBankPaymentPage();
             await paymentStepPage.goToPaymentStepPage();
-            it('then should be bought a t-shirt', async () => {
-              await expect($('#center_column > div > p > strong').getText())
-             .toBe('Your order on My Store is complete.');
-            });
+          });
+          it('then should be bought a t-shirt', async () => {
+            await expect($('#center_column > div > p > strong').getText())
+           .toBe('Your order on My Store is complete.');
           });
         });
       });
