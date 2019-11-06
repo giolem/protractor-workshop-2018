@@ -1,6 +1,6 @@
 import { $, browser } from 'protractor';
 import { MenuContentPage, SignInStepPage, AddressStepPage, ShippingStepPage, BankPaymentPage,
-  PaymentStepPage, SummaryStepPage, ProductAddedModalPage, OrderSummaryPage } from '../src/page';
+  PaymentStepPage, SummaryStepPage, ProductAddedModalPage, ProductListPage } from '../src/page';
 
 describe('Open shopping page', () => {
   beforeAll(async () => {
@@ -10,11 +10,13 @@ describe('Open shopping page', () => {
   describe('Buying a Tshirt', () => {
     beforeAll(async () => {
       const menuContentPage: MenuContentPage = new MenuContentPage();
-      const orderSummaryPage : OrderSummaryPage = new OrderSummaryPage();
+      const productListPage : ProductListPage = new ProductListPage();
+      // const orderSummaryPage : OrderSummaryPage = new OrderSummaryPage();
       const productAddedModalPage : ProductAddedModalPage = new ProductAddedModalPage();
       const summaryStepPage : SummaryStepPage = new SummaryStepPage();
       await menuContentPage.goToTShirtMenu();
-      await orderSummaryPage.goToOrderSummaryPage();
+      await productListPage.selectProduct('Faded Short Sleeve T-shirts');
+      // await orderSummaryPage.goToOrderSummaryPage();
       await productAddedModalPage.goToProductAddedModalPage();
       await summaryStepPage.goToSummaryStepPage();
     });
