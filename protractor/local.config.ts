@@ -4,7 +4,7 @@ import { awesomeReporter } from './helpers/awesome-report';
 
 export const config: Config = {
   framework: 'jasmine',
-  specs: ['../test/**/*.spec.js'],
+  specs: ['../test/**/locators.spec.js'],
   getPageTimeout: 30000 ,
 
   SELENIUM_PROMISE_MANAGER : false,
@@ -18,7 +18,7 @@ export const config: Config = {
     capabilities: {
       browserName: 'chrome',
       chromeOptions: {
-        args: ['--disable-popup-blocking', '--no-default-browser-check', '--window-size=800,600'],
+        args: ['--disable-popup-blocking', '--no-default-browser-check', '--window-size=1900,1000'],
         prefs: { credentials_enable_service: false }
       }
     }

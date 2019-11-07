@@ -1,19 +1,34 @@
 import { browser } from 'protractor';
 import { PersonalInformationPage } from '../src/page';
 
-describe('Open shopping page', () => {
+describe('Given a page to practice automation', () => {
   beforeAll(async () => {
     await browser.get('http://toolsqa.com/automation-practice-form/');
   });
 
-  describe('Filling first field', () => {
-    const fillFieldName: PersonalInformationPage = new PersonalInformationPage();
-    fillFieldName.fillField();
+  describe('when I am training locators', () => {
+    const personalInformationPage = new PersonalInformationPage();
 
-    it('then should have a title', async () => {
-      await expect(browser.getTitle()).toEqual('Demo Form for practicing Selenium Automation');
+    beforeAll(async () => {
+      await personalInformationPage.fillForm({
+        firstName: 'Alejandro',
+        lastName: 'Perdomo',
+        sex: 'Male',
+        experience: 7,
+        profession: ['Automation Tester'],
+        tools: ['Selenium Webdriver'],
+        continent: 'South America',
+        commands: [
+          'Browser Commands',
+          'Navigation Commands',
+          'Switch Commands',
+          'Wait Commands',
+          'WebElement Commands']
+      });
     });
 
+    it('the form should be filled', async () => {
+      expect(await personalInformationPage.getPageTitle()).toBe('Automation Practice Form');
+    });
   });
-
 });
