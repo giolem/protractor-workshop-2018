@@ -28,7 +28,7 @@ describe('Given a page with Iframes', () => {
       });
 
       it('then should be have other title', async () => {
-        expect(await personalInformationPage.getPageTitle()).toBe('Practice Automation Form');
+        expect(await personalInformationPage.getPageTitle()).toBe('Automation Tools Tutorial');
       });
 
       describe('and return to main frame', () => {
